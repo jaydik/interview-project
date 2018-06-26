@@ -1,0 +1,14 @@
+# Local Setup Params
+db:
+  url: jdbc:postgresql://localhost:5432/THDB
+  user: test-project
+  password: test-project
+
+
+# client config
+clients:
+
+  # Weather client config
+  apixu:
+    url: https://api.apixu.com/v1/
+    key: c748320c28454a8a9a001636182606
