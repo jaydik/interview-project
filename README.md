@@ -2,7 +2,7 @@
 Temperature Insights Service To Get Insights From Current, Past, And Future Weather
 
 ## To Build
-~**Please Fork First**~
+<i>**Please Fork First**</i>
 
 1. After forking the repo, to build the jar: \
     `mvn clean install`
