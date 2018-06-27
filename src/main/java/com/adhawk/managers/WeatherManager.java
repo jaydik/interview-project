@@ -2,7 +2,7 @@ package com.adhawk.managers;
 
 import com.adhawk.clients.ApixuClient;
 import com.adhawk.models.CurrentTemperature;
-import com.adhawk.models.responses.apixu.CurrentWeatherResponse;
+import com.adhawk.models.responses.apixu.WeatherResponse;
 
 public class WeatherManager {
 
@@ -15,7 +15,7 @@ public class WeatherManager {
     public CurrentTemperature getCurrentTemperatureInFarenheit(String zipCode) {
 
         // lets make the assumption is valid zip for this project
-        CurrentWeatherResponse currentWeatherResponse = apixuClient.getCurrentWeatherConditions(zipCode);
+        WeatherResponse currentWeatherResponse = apixuClient.getCurrentWeatherConditions(zipCode);
 
         CurrentTemperature currentTemperature = new CurrentTemperature();
         currentTemperature.setLocation(currentWeatherResponse.getLocation().getName() + ", "

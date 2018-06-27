@@ -13,4 +13,4 @@ Temperature Insights Service To Get Insights From Current, Past, And Future Weat
     - main class: `com.adhawk.TemperatureInsightsService`
     - program arguments: `server target/classes/temp-service.yml ` 
     
-* We use java 1.8        
+* We use java 1.8, maven so prereqs to run        

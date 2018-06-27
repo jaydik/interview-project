@@ -1,6 +1,6 @@
 package com.adhawk.clients;
 
-import com.adhawk.models.responses.apixu.CurrentWeatherResponse;
+import com.adhawk.models.responses.apixu.WeatherResponse;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
@@ -10,7 +10,7 @@ public class ApixuClient {
 
     private final String CURRENT_PATH = "current.json";
     private final String HISTORY_PATH = "history.json";
-    private final String FORCAST_PATH = "current.json";
+    private final String FORECAST_PATH = "forecast.json";
 
     private Client client;
     private WebTarget target;
@@ -27,22 +27,14 @@ public class ApixuClient {
         target = client.target(url);
     }
 
-    public CurrentWeatherResponse getCurrentWeatherConditions(String query) {
-        CurrentWeatherResponse currentWeatherResponse = target
+    public WeatherResponse getCurrentWeatherConditions(String query) {
+
+        return target
                 .path(CURRENT_PATH)
                 .queryParam("key", key)
                 .queryParam("q", query)
                 .request(MediaType.APPLICATION_JSON_TYPE)
-                .get(CurrentWeatherResponse.class);
-
-        return currentWeatherResponse;
+                .get(WeatherResponse.class);
     }
-
-    public static void main(String[] args) {
-        ApixuClient apixuClient = new ApixuClient("https://api.apixu.com/v1/", "c748320c28454a8a9a001636182606");
-
-        apixuClient.getCurrentWeatherConditions("92101");
-
-    }
-
 }
+
